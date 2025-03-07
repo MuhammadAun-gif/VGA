@@ -18,6 +18,17 @@ module vga_module (input logic clock_25, rst,
     v_state_t v_state;
 
     parameter [9:0] H_active = 10'd640;
+    parameter [9:0] H_front = 10'd16;
+    parameter [9:0] H_pusle = 10'd92;
+    parameter [9:0] H_back = 10'd48;
+    parameter [9:0] H-total = H_active + H_front + H_pusle + H_back;
+
+    parameter [9:0] V_active = 10'd480;
+    parameter [9:0] V_front = 10'd10;
+    parameter [9:0] V_pusle = 10'd2;
+    parameter [9:0] V_back = 10'd33;
+    parameter [9:0] V-total = V_active + V_front + V_pusle + V_back;
+
 
     logic [9:0] h_counter = 10'd0; 
     logic [9:0] v_counter = 10'd0; 
